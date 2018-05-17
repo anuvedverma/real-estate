@@ -2,7 +2,9 @@ import zillow
 import numpy as np
 
 
-ZILLOW_API_KEY = 'X1-ZWz1gevn1g1l3f_91vx7'
+with open('./config/zillow_key.conf', 'r') as f:
+        ZILLOW_API_KEY = f.readline().replace('\n', '')
+
 api = zillow.ValuationApi()
 
 address = "3400 Pacific Ave., Marina Del Rey, CA"
